@@ -18,5 +18,6 @@ export class AppService {
   createUser(user) {
     this.users.push(user);
     this.eventQueue.emit('user-created', user);
+    return user;
   }
 }

@@ -18,5 +18,6 @@ export class AppService {
   createOrder(order) {
     this.orders.push(order);
     this.eventQueue.emit('order-created', order);
+    return order;
   }
 }

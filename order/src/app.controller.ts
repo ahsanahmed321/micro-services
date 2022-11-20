@@ -10,4 +10,9 @@ export class AppController {
   getOrders() {
     return this.appService.getOrders();
   }
+
+  @MessagePattern({ cmd: 'create-order' })
+  createOrder(data) {
+    return this.appService.createOrder(data);
+  }
 }
