@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
+import { ClientKafka } from '@nestjs/microservices';
 
 @Injectable()
 export class AppService {
@@ -9,7 +9,7 @@ export class AppService {
     { name: 'Taha', email: 'ahsan@gmail.com', password: '123' },
   ];
 
-  constructor(@Inject('EVENT_QUEUE') private eventQueue: ClientProxy) {}
+  constructor(@Inject('EVENT_QUEUE') private eventQueue: ClientKafka) {}
 
   getUsers() {
     return this.users;
