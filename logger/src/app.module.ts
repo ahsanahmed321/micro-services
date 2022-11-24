@@ -4,14 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [
-    ClientsModule.register([
-      {
-        name: 'EVENT_QUEUE',
-        transport: Transport.TCP,
-      },
-    ]),
-  ],
+  imports: [],
   controllers: [AppController],
   providers: [AppService],
 })
