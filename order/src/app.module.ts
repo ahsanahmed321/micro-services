@@ -8,7 +8,16 @@ import { AppService } from './app.service';
     ClientsModule.register([
       {
         name: 'EVENT_QUEUE',
-        transport: Transport.TCP,
+        transport: Transport.KAFKA,
+        options: {
+          client: {
+            clientId: 'eventQueue',
+            brokers: ['localhost:9092'],
+          },
+          consumer: {
+            groupId: 'eventQueueConsumer',
+          },
+        },
       },
     ]),
   ],
